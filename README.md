@@ -28,3 +28,11 @@ cd ../l2_edge/
 python drone_fleet.py
 
 ```
+
+## Running tests
+
+```
+cd bc_34/l1_block_chain/
+npm install 
+run_edge_tests.sh
+```
