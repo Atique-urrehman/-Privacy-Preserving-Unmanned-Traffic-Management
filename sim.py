@@ -75,7 +75,11 @@ class Drone:
 class CollisionManager:
     
     def __init__(self):
+<<<<<<< HEAD
         self.epoch_window = 20
+=======
+        self.epoch_window = 5
+>>>>>>> d559ddaa029cbdcf73f65d10cdc50e35d7221358
         self.current_epoch = None
         self.occupancy_log = {}  
         self.collisions = []
