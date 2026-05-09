@@ -1,0 +1,1 @@
+Make another drone_fleet.py where coordinated are either hardcoded or generated in a such way that we know that sometimes some of them will collide.

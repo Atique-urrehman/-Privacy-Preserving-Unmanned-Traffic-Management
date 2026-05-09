@@ -1,0 +1,31 @@
+{
+  "name": "zk-drone-rollup",
+  "version": "1.0.0",
+  "description": "Zero-Knowledge Circuit for Layer 2 Drone Traffic Rollup",
+  "main": "index.js",
+  "scripts": {
+    "compile": "circom batch_proof.circom --r1cs --wasm",
+    "setup": "npm run setup:tau && npm run setup:phase2",
+    "setup:tau": "snarkjs powersoftau new bn128 15 pot15_0000.ptau && snarkjs powersoftau contribute pot15_0000.ptau pot15_0001.ptau --name 'First contribution' -v",
+    "setup:phase2": "snarkjs powersoftau prepare phase2 pot15_0001.ptau pot15_final.ptau && snarkjs groth16 setup batch_proof_js/batch_proof.r1cs pot15_final.ptau batch_proof_0000.zkey && snarkjs zkey contribute batch_proof_0000.zkey batch_proof_0001.zkey --name 'First contribution' -v && snarkjs zkey export verificationkey batch_proof_0001.zkey verification_key.json",
+    "generate-verifier": "snarkjs zkey export solidityverifier batch_proof_0001.zkey Verifier.sol",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zk-proof",
+    "circom",
+    "drone",
+    "layer2",
+    "rollup",
+    "merkle",
+    "poseidon"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "big-integer": "^1.6.52",
+    "circomlib": "2.0.5",
+    "circomlibjs": "^0.0.8",
+    "snarkjs": "0.7.6"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "l1_block_chain",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "node": "hardhat node",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:ignition": "hardhat ignition deploy ./ignition/modules/Deploy.js --network localhost"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@nomicfoundation/hardhat-ignition": "^0.15.14",
+    "ethers": "^6.13.5",
+    "hardhat": "^2.26.0"
+  }
+}

@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Generated Circuit Files
+batch_proof_js/
+batch_proof.r1cs
+batch_proof.sym
+
+# Powers of Tau
+pot*.ptau
+
+# Zero-Knowledge Keys
+batch_proof_*.zkey
+
+# Generated Contracts
+Verifier.sol
+
+# Proof Files (if generated during testing)
+*.proof
+*.json.proof
+
+# Generated circuit inputs and proofs
+inputs.json
+seed_leaves.json
+witness.wtns
+proof.json
+public.json
+verification_key.json
+
+# System files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+/tmp/
+/temp/
